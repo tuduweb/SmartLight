@@ -241,7 +241,7 @@ void USART3_IRQHandler(void)
 	{
 		HAL_UART_Receive(&huart3,&res,1,1000);
 		
-		//queue_push(res);
+		Queue_Push(res);
 
 		//HAL_UART_Transmit(&huart1,&res,1,0xffff);
 		

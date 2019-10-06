@@ -121,17 +121,20 @@ int main(void)
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 	
-	//__HAL_UART_ENABLE_IT(&huart3,UART_IT_RXNE);
 	
 	
 	HAL_UART_Transmit(&huart1,sendData,sizeof(sendData) - 1,0xffff);
 
 
 	HAL_Delay(300);
+	__HAL_UART_ENABLE_IT(&huart3,UART_IT_RXNE);
 
 	HAL_TIM_Base_Start_IT(&htim1);
 	//__HAL_TIM_ENABLE(&htim1);
 	
+
+
+  Export_Function1();
 
   /* USER CODE END 2 */
 
@@ -151,7 +154,7 @@ int main(void)
 		
 		Export_Function();
 		
-		HAL_Delay(1000);
+		HAL_Delay(500);
 		
   }
   /* USER CODE END 3 */
